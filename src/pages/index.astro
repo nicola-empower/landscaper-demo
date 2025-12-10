@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import TrustBar from "../components/TrustBar.jsx";
 import FAQ from "../components/FAQ.jsx";
 import Testimonials from "../components/Testimonials.jsx";
+import GardenEstimator from "../components/GardenEstimator.jsx";
 
 const features = [
 	{ title: "Bespoke Design", desc: "Every garden is unique to you." },
@@ -147,6 +148,30 @@ const features = [
 				</div>
 			</div>
 		</div>
+
+		<!-- Garden Planner Section -->
+		<div class="py-24 bg-green-50 relative">
+			<div class="mx-auto max-w-7xl px-6 lg:px-8">
+				<div class="mx-auto max-w-2xl text-center mb-16">
+					<h2
+						class="text-base font-semibold leading-7 text-green-700"
+					>
+						Online Garden Planner
+					</h2>
+					<p
+						class="mt-2 text-3xl font-serif font-bold tracking-tight text-primary sm:text-4xl"
+					>
+						Start Your Dream Garden
+					</p>
+					<p class="mt-4 text-lg text-gray-600">
+						Tell us about your space and vision to get a preliminary
+						consultation plan.
+					</p>
+				</div>
+				<GardenEstimator client:visible />
+			</div>
+		</div>
+
 		<!-- Testimonials (Already partially handled by custom slider, but adding generic social proof for volume) -->
 		<Testimonials client:visible />
 		<FAQ client:visible />
