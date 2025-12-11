@@ -1,7 +1,4 @@
 ---
-import "@fontsource/outfit/400.css";
-import "@fontsource/outfit/500.css";
-import "@fontsource/outfit/700.css";
 import "../styles/global.css";
 import Header from "../components/Header.jsx";
 import LocalSeoFooter from "../components/LocalSeoFooter.astro";
@@ -19,12 +16,12 @@ interface Props {
 
 const {
     title,
-    description = "Award-Winning Landscape Gardeners",
-    service = "Landscape Gardening",
-    city = "Guildford",
-    areas = ["Godalming", "Woking", "Farnham", "Haslemere", "Cobham"],
-    postcodes = ["GU1", "GU2", "GU4", "GU5", "GU7"],
-    phone = "01483 900 123",
+    description = "Garden Design and Landscaping",
+    service = "Landscaping",
+    city = "Norwich",
+    areas = ["Wymondham", "Dereham", "Aylsham", "Wroxham", "Attleborough"],
+    postcodes = ["NR1", "NR2", "NR6", "NR18", "NR19"],
+    phone = "01603 900 123",
 } = Astro.props;
 ---
 
@@ -37,9 +34,16 @@ const {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <!-- Fraunces (Soft Serif) + Nunito Sans (Sans) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;700&family=Nunito+Sans:opsz,wght@6..12,400;600&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body
-        class="min-h-screen flex flex-col overflow-x-hidden selection:bg-accent selection:text-white"
+        class="min-h-screen flex flex-col overflow-x-hidden font-body selection:bg-accent selection:text-white"
     >
         <!-- Sticky Header (Desktop) -->
         <Header client:load title={title.split(" - ")[0]} phone={phone} />

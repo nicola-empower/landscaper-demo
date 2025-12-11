@@ -1,23 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Outfit', sans-serif;
-  --color-primary: #064e3b;
-  /* Emerald 900 */
-  --color-secondary: #065f46;
-  /* Emerald 800 */
-  --color-accent: #15803d;
-  /* Green 700 - Nature/Growth */
-  --color-stone: #78716c;
-  /* Stone 500 - Hardscaping */
+  --font-header: "Fraunces", serif;
+  --font-body: "Nunito Sans", sans-serif;
+
+  --color-accent: #047857;
+  /* emerald-700 */
+  --color-accent-hover: #065f46;
+  /* emerald-800 */
+
+  --radius-button: 0.5rem;
+  /* rounded-lg */
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
+@layer utilities {
+  .font-header {
+    font-family: var(--font-header);
   }
 
-  body {
-    @apply bg-white text-primary antialiased selection:bg-accent/20 selection:text-white;
+  .font-body {
+    font-family: var(--font-body);
   }
+}
+
+/* Landscaper Base Styles */
+body {
+  background-color: #ffffff;
+  color: #1e293b;
+  /* slate-800 */
 }

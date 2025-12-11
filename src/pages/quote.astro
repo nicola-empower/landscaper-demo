@@ -1,0 +1,225 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Trees, Sun, Ruler, CheckCircle } from "lucide-react";
+---
+
+<Layout title="Garden Planner | Eden Landscapes">
+    <main class="bg-stone-50 min-h-screen">
+        <div class="bg-green-900 py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+                <h1
+                    class="text-4xl font-bold tracking-tight text-white sm:text-6xl font-serif"
+                >
+                    Plan Your Dream Garden
+                </h1>
+                <p class="mt-6 text-lg leading-8 text-green-100">
+                    Tell us a little about your project to get a preliminary
+                    consultation plan.
+                </p>
+            </div>
+        </div>
+
+        <div class="mx-auto max-w-3xl px-6 lg:px-8 py-16 -mt-20 relative z-10">
+            <div
+                class="bg-white rounded-2xl shadow-xl overflow-hidden p-8 sm:p-12"
+            >
+                <form class="space-y-8">
+                    <!-- Section 1: Project Type -->
+                    <div>
+                        <h3
+                            class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2"
+                        >
+                            <span
+                                class="bg-green-100 text-green-700 w-8 h-8 rounded-full flex items-center justify-center text-sm"
+                                >1</span
+                            >
+                            What type of project is this?
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label
+                                class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none hover:border-green-500 hover:ring-1 hover:ring-green-500"
+                            >
+                                <input
+                                    type="radio"
+                                    name="project-type"
+                                    value="Full Transformation"
+                                    class="sr-only"
+                                    aria-labelledby="project-type-0-label"
+                                    aria-describedby="project-type-0-description-0 project-type-0-description-1"
+                                />
+                                <span class="flex flex-1">
+                                    <span class="flex flex-col">
+                                        <span
+                                            id="project-type-0-label"
+                                            class="block text-sm font-medium text-gray-900"
+                                            >Full Transformation</span
+                                        >
+                                        <span
+                                            id="project-type-0-description-0"
+                                            class="mt-1 flex items-center text-sm text-gray-500"
+                                            >Complete redesign of the garden</span
+                                        >
+                                    </span>
+                                </span>
+                                <CheckCircle
+                                    class="h-5 w-5 text-green-600 hidden ui-checked:block"
+                                />
+                            </label>
+                            <label
+                                class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none hover:border-green-500 hover:ring-1 hover:ring-green-500"
+                            >
+                                <input
+                                    type="radio"
+                                    name="project-type"
+                                    value="Hardscaping Only"
+                                    class="sr-only"
+                                />
+                                <span class="flex flex-1">
+                                    <span class="flex flex-col">
+                                        <span
+                                            class="block text-sm font-medium text-gray-900"
+                                            >Hardscaping Focused</span
+                                        >
+                                        <span
+                                            class="mt-1 flex items-center text-sm text-gray-500"
+                                            >Patio, Driveway, or Paving</span
+                                        >
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Features -->
+                    <div>
+                        <h3
+                            class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2"
+                        >
+                            <span
+                                class="bg-green-100 text-green-700 w-8 h-8 rounded-full flex items-center justify-center text-sm"
+                                >2</span
+                            >
+                            Desired Features
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            {
+                                [
+                                    "Porcelain Patio",
+                                    "Natural Stone",
+                                    "Composite Decking",
+                                    "Real Turf",
+                                    "Artificial Lawns",
+                                    "Pergola",
+                                    "Outdoor Kitchen",
+                                    "Lighting",
+                                    "Planting Scheme",
+                                ].map((feature) => (
+                                    <div class="flex items-center gap-x-3">
+                                        <input
+                                            id={feature}
+                                            name="features"
+                                            type="checkbox"
+                                            class="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-600"
+                                        />
+                                        <label
+                                            for={feature}
+                                            class="text-sm leading-6 text-gray-600"
+                                        >
+                                            {feature}
+                                        </label>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Budget -->
+                    <div>
+                        <h3
+                            class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2"
+                        >
+                            <span
+                                class="bg-green-100 text-green-700 w-8 h-8 rounded-full flex items-center justify-center text-sm"
+                                >3</span
+                            >
+                            Estimated Budget
+                        </h3>
+                        <select
+                            id="budget"
+                            name="budget"
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                        >
+                            <option>Unknown / Flexible</option>
+                            <option>£5,000 - £10,000</option>
+                            <option>£10,000 - £25,000</option>
+                            <option>£25,000 - £50,000</option>
+                            <option>£50,000+</option>
+                        </select>
+                    </div>
+
+                    <!-- Section 4: Details -->
+                    <div
+                        class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2"
+                    >
+                        <div>
+                            <label
+                                for="name"
+                                class="block text-sm font-medium leading-6 text-gray-900"
+                                >Name</label
+                            >
+                            <div class="mt-2">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    autocomplete="name"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label
+                                for="email"
+                                class="block text-sm font-medium leading-6 text-gray-900"
+                                >Email</label
+                            >
+                            <div class="mt-2">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    autocomplete="email"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label
+                                for="postcode"
+                                class="block text-sm font-medium leading-6 text-gray-900"
+                                >Postcode</label
+                            >
+                            <div class="mt-2">
+                                <input
+                                    type="text"
+                                    name="postcode"
+                                    id="postcode"
+                                    autocomplete="postal-code"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button
+                            type="submit"
+                            class="block w-full rounded-full bg-green-700 px-3.5 py-4 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 transition-all"
+                            >Request Consultation</button
+                        >
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</Layout>

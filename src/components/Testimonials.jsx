@@ -1,28 +1,31 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 
-const Testimonials = () => {
-    const reviews = [
-        {
-            text: "Absolutely fantastic service. Professional, on time, and the quality of work was outstanding. Highly recommended!",
-            author: "James Wilson",
-            location: "Local Resident",
-            rating: 5
-        },
-        {
-            text: "Great communication from start to finish. They explained everything clearly and left the place spotless.",
-            author: "Sarah Jenkins",
-            location: "Homeowner",
-            rating: 5
-        },
-        {
-            text: "Reliable and trustworthy. I've used them multiple times now and wouldn't go anywhere else.",
-            author: "Robert Smith",
-            location: "Local Business Owner",
-            rating: 5
-        }
-    ];
+const defaultReviews = [
+    {
+        text: "The detail and finish is simply outstanding. We effectively have a new room outdoors. The team was polite, tidy, and the planting scheme is blooming beautifully.",
+        author: "The Anderson Family",
+        location: "Surrey",
+        rating: 5,
+        role: "Garden Transformation"
+    },
+    {
+        text: "We didn't just want a patio; we wanted a design. Eden Landscapes provided 3D visualizations that blew us away. The reality looks exactly like the render.",
+        author: "Mr. J. Wright",
+        location: "Guildford",
+        rating: 5,
+        role: "Design Client"
+    },
+    {
+        text: "Transformed our muddy backyard into a stunning entertaining space. The porcelain paving is flawless.",
+        author: "Sarah & Tom",
+        location: "Woking",
+        rating: 5,
+        role: "Patio & Living"
+    }
+];
 
+const Testimonials = ({ reviews = defaultReviews }) => {
     return (
         <section className="py-24 bg-gray-50">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -40,7 +43,7 @@ const Testimonials = () => {
                                     <Star key={i} className="h-5 w-5 fill-current" />
                                 ))}
                             </div>
-                            <blockquote className="text-gray-900 text-lg leading-8 flex-grow">
+                            <blockquote className="text-gray-900 text-lg leading-8 grow">
                                 <p>“{review.text}”</p>
                             </blockquote>
                             <div className="mt-8 flex items-center gap-x-4">
@@ -49,7 +52,7 @@ const Testimonials = () => {
                                 </div>
                                 <div className="text-sm leading-6">
                                     <div className="font-semibold text-gray-900">{review.author}</div>
-                                    <div className="text-gray-600">{review.location}</div>
+                                    <div className="text-gray-600">{review.role || review.location}</div>
                                 </div>
                             </div>
                         </div>
