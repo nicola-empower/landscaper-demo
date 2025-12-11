@@ -4,6 +4,8 @@ import TrustBar from "../components/TrustBar.jsx";
 import FAQ from "../components/FAQ.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 import GardenEstimator from "../components/GardenEstimator.jsx";
+import ServiceAreaMap from "../components/ServiceAreaMap.jsx";
+import ProcessFlow from "../components/ProcessFlow.jsx";
 
 const features = [
 	{ title: "Bespoke Design", desc: "Every garden is unique to you." },
@@ -66,12 +68,12 @@ const features = [
 				</div>
 			</div>
 
-			<!-- Trust Bar Overlay -->
-			<div
-				class="absolute bottom-0 w-full backdrop-blur-sm bg-black/20 border-t border-white/10"
-			>
-				<TrustBar client:visible theme="dark" />
-			</div>
+			<!-- Trust Bar (Moved below hero) -->
+			<!-- Removed overlay -->
+		</div>
+
+		<div class="border-b border-gray-100 bg-white">
+			<TrustBar client:visible theme="light" />
 		</div>
 
 		<!-- Aspirational "Dream" Section -->
@@ -149,6 +151,8 @@ const features = [
 			</div>
 		</div>
 
+		<ProcessFlow client:visible />
+
 		<!-- Garden Planner Section -->
 		<div class="py-24 bg-green-50 relative">
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -174,6 +178,9 @@ const features = [
 
 		<!-- Testimonials (Already partially handled by custom slider, but adding generic social proof for volume) -->
 		<Testimonials client:visible />
+
+		<ServiceAreaMap client:only="react" />
+
 		<FAQ client:visible />
 	</main>
 </Layout>
