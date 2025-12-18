@@ -5,6 +5,8 @@ import Testimonials from "../components/Testimonials.jsx";
 import FAQ from "../components/FAQ.jsx";
 import FeatureSection from "../components/FeatureSection.jsx";
 import ProcessFlow from "../components/ProcessFlow.jsx";
+import ProcessFlow from "../components/ProcessFlow.jsx";
+import ServiceAreaMap from "../components/ServiceAreaMap.jsx";
 import { Trees, Flower, Ruler, Home, Sun, CheckCircle } from "lucide-react";
 
 const philosophyFeatures = [
@@ -297,6 +299,34 @@ const philosophyFeatures = [
 						alt="Recent landscaping project"
 						class="w-full rounded-2xl shadow-xl ring-1 ring-green-900/10 object-cover aspect-video"
 					/>
+				</div>
+
+				<!-- Service Area Map Section -->
+				<div class="py-24 bg-stone-50">
+					<div class="mx-auto max-w-7xl px-6 lg:px-8">
+						<div class="mx-auto max-w-2xl text-center mb-16">
+							<h2
+								class="text-base font-semibold leading-7 text-accent"
+							>
+								Coverage
+							</h2>
+							<p
+								class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-serif"
+							>
+								Areas We Serve
+							</p>
+							<p class="mt-4 text-lg text-gray-600">
+								Transforming gardens across Surrey, Hampshire,
+								and South West London.
+							</p>
+						</div>
+						<ServiceAreaMap
+							client:only="react"
+							center={[51.3148, -0.56]}
+							city="Woking & Surrounds"
+							radiusMiles={25}
+						/>
+					</div>
 				</div>
 			</div>
 		</div>
